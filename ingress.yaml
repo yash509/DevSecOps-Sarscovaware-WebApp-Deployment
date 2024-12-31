@@ -1,23 +1,23 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: pe-wa-ingress
+  name: sarscovawa-ingress
 spec:
   rules:
-  - host: pe-wa
+  - host: sarscovawa
     http:
       paths:
       - path: /
         pathType: Prefix
         backend:
           service:
-            name: pe-wa-service
+            name: sarscovawa-service
             port:
               number: 5000 #80
       - path: /app
         pathType: Prefix
         backend:
           service:
-            name: pe-wa-service
+            name: sarscovawa-service
             port:
               number: 5000 #80
