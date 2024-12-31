@@ -1,13 +1,13 @@
 apiVersion: batch/v1
 kind: Job
 metadata:
-  name: pe-wa-job
+  name: sarscovawa-job
 spec:
   template:
     spec:
       containers:
-      - name: pe-wa-job
-        image: yash5090/pe-wa:latest
+      - name: sarscovawa-job
+        image: yash5090/sarscovawa:latest
         ports:
         - containerPort: 5000
       restartPolicy: OnFailure
