@@ -1,27 +1,27 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: countrybank-green
+  name: sarscovawa-green
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
-      app: countrybank
+      app: sarscovawa
       version: green
   template:
     metadata:
       labels:
-        app: countrybank
+        app: sarscovawa
         version: green
     spec:
       containers:
-      - name: countrybank
-        image: yash5090/countrybank:green # Adjust the image tag for the green version
+      - name: sarscovawa
+        image: yash5090/sarscovawa:green # Adjust the image tag for the green version
         ports:
-        - containerPort: 3000
+        - containerPort: 5000
         # env:
         # - name: SPRING_DATASOURCE_URL
-        #   value: jdbc:mysql://mysql-service:3306/countrybankdb?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
+        #   value: jdbc:mysql://mysql-service:3306/sarscovawadb?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
         # - name: SPRING_DATASOURCE_USERNAME
         #   value: root
         # - name: SPRING_DATASOURCE_PASSWORD
